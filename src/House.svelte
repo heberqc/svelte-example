@@ -8,6 +8,14 @@
 		'Dino',
 		'Fido',
 	]
+	const dogNames = [
+		{ name: 'Roger' },
+		{ name: 'Syd' },
+		{ name: 'Dino' },
+		{ name: 'Fido' },
+	]
+	let goodDogNames = []
+	let selected
 </script>
 
 <style>
@@ -34,3 +42,30 @@
 	<li>{dog}</li>
 {/each}
 </ul>
+
+<h2>Wich are good dog names?</h2>
+
+<select multiple bind:value={goodDogNames}>
+	{#each dogNames as dogName}
+		<option value={dogName}>{dogName.name}</option>
+	{/each}
+</select>
+
+{#if goodDogNames.length}
+	<h2>Good dog names selected</h2>
+	{#each goodDogNames as dogName}
+		<li>{dogName.name}</li>
+	{/each}
+{/if}
+
+<h2>Select a number</h2>
+
+<select bind:value={selected}>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+</select>
+
+<p>Selected number: {selected}</p>
