@@ -1,4 +1,6 @@
 <script>
+	import Car from './Car.svelte'
+	let carInMovement
 	import Dog from './Dog.svelte'
 	export let name
 	let goodDogs = []
@@ -69,3 +71,11 @@
 </select>
 
 <p>Selected number: {selected}</p>
+
+<hr>
+
+<Car bind:inMovement={carInMovement} />
+
+<span>The car is in movement?: {carInMovement}</span>
+
+<br>
